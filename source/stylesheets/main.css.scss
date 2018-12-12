@@ -1,0 +1,306 @@
+///--- Colors ---
+$primary: #a4c736;
+$orange: #ef7e2d;
+$dark-grey: #535241;
+$mid-grey: #9a9a8b;
+$light-grey: #d8d8d1;
+
+///--- Globals ---
+body,
+a {
+  color: $dark-grey;
+}
+
+///--- Header ---
+.hdr {
+  &--container {
+    max-height: 120px;
+  }
+  &--topnav {
+    background-color: $primary; //height: 30px;
+    &--links {
+      list-style: none;
+      float: right;
+      margin: 0;
+    }
+    &--a {
+      color: #fff;
+      text-decoration: none;
+      padding: 6px 8px;
+    }
+    &--link {
+      display: inline-block;
+      margin: 0;
+      line-height: 30px;
+      letter-spacing: -1px;
+      &:hover {
+        color: $primary;
+        background-color: #fff;
+        & .hdr--topnav--a {
+          color: $primary;
+        }
+      }
+    }
+  }
+  &--logo {
+    padding-left: 20px;
+    margin-top: -20px;
+    &--bg {
+      background: linear-gradient(#fff, $light-grey);
+    }
+    &--a {
+      display: block;
+      width: 100%;
+    }
+  }
+  &--btmnav {
+    background-color: $mid-grey;
+    margin-top: -7px;
+    &--links {
+      list-style: none;
+      margin: 0;
+      text-align: center;
+    }
+    &--a {
+      color: #fff;
+      text-decoration: none;
+      padding: 10px 7px;
+    }
+    &--link {
+      display: inline-block;
+      line-height: 40px;
+      margin: 0;
+      letter-spacing: -1px;
+      &:hover {
+        background-color: #fff;
+        color: $mid-grey;
+        & .hdr--btmnav--a {
+          color: $mid-grey;
+        }
+      }
+    }
+  }
+}
+
+///--- Greetings ---
+.greet {
+  padding: 0 15px;
+  &--container {
+    padding: 20px 0;
+  }
+  &--h5 {
+    margin-bottom: 10px;
+    letter-spacing: -1px;
+  }
+  &--hr {
+    margin: 10px 0;
+    border-top: 1px solid $light-grey;
+  }
+  &--p {
+    font-size: 1.2rem;
+    text-align: justify;
+  }
+  &--a {
+    float: right;
+  }
+}
+
+///--- Slider ---
+.slideshow {
+  &--img {}
+}
+
+///--- Buttons ---
+.button.button-primary {
+  background-color: $primary;
+  border-color: $primary;
+  border-radius: 0px;
+  height: 30px;
+  padding: 0 20px;
+  line-height: 30px;
+  text-transform: none;
+  &:hover {
+    background-color: lighten($primary, 10%);
+    border-color: lighten($primary, 10%);
+  }
+}
+
+///--- Utilities ---
+.no_line {
+  text-decoration: none;
+  &:hover {
+    color: $primary;
+  }
+}
+
+///--- Features ---
+.feat {}
+
+.card {
+  height: 195px;
+  position: relative;
+  margin-bottom: 15px;
+  &--head {
+    color: #fff;
+    line-height: 5rem;
+    padding-left: 10px;
+    letter-spacing: -1px;
+    &--bg {
+      background-color: $mid-grey;
+    }
+  }
+  &--content {}
+  &--p {
+    max-width: 150px;
+    font-size: 1.2rem;
+    padding: 0 10px;
+  }
+  &--links {
+    list-style: none;
+    margin-left: 10px;
+  }
+  &--link {
+    padding-left: 10px;
+  }
+  &--img {
+    /*position: absolute;
+    top: 10px;
+    right: 10px;*/
+    float: right;
+    margin: -60px 10px 0 0;
+  }
+  &--btn {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+  }
+}
+
+///--- Footer ---
+.footer {
+  background-color: $dark-grey;
+  &--container {
+    padding: 20px;
+  }
+  &--p {
+    margin-bottom: 0;
+    color: #fff;
+    font-size: 1.3rem;
+  }
+  &--email {
+    text-decoration: none;
+    color: $primary;
+    &:hover {
+      color: $orange;
+    }
+  }
+}
+
+///--- Media Quieries ---
+@media (max-width: 1024px) {
+  .card--head {
+    font-size: 2.0rem;
+  }
+}
+
+@media (max-width: 960px) {
+  .card {
+    min-height: 280px;
+    &--head {
+      padding-left: 0;
+      text-align: center;
+    }
+    &--img {
+      float: none;
+      margin: -10px auto 10px auto;
+      display: flex;
+      align-items: center;
+    }
+    &--p {
+      margin: 0 auto 25px auto;
+    }
+  }
+}
+
+@media (max-width: 800px) {
+  .hdr--topnav--links {
+    float: none;
+    text-align: center;
+  }
+  .hdr--logo {
+    padding: 0;
+    &--a {
+      text-align: center;
+    }
+  }
+  div.four.columns.greet {
+    width: 100%;
+  }
+  div.eight.columns.slideshow {
+    width: 100%;
+    margin: 10px 0;
+  }
+  .card {
+    &--links {
+      margin: 0;
+      text-align: center;
+    }
+    &--link {
+      padding: 0;
+    }
+    &--btn {
+      //display: block;
+      //width: 100%;
+      right: calc(50% - 25px);
+    }
+  }
+}
+
+@media (max-width: 550px) {
+  .greet {
+    &--p {
+      font-size: 1.5rem;
+    }
+  }
+  .card {
+    min-height: 90px;
+    &--head {
+      text-align: left;
+      padding-left: 10px;
+      font-size: 3rem;
+    }
+    &--links {
+      text-align: left;
+      margin-left: 10px;
+    }
+    &--link {
+      font-size: 1.5rem;
+    }
+    &--p {
+      max-width: 170px;
+      padding: 0 10px;
+      margin: 0;
+      font-size: 1.5rem;
+    }
+    &--img {
+      float: right;
+      margin: -60px 10px 0 0;
+    }
+    &--btn {
+      position: absolute;
+      right: 10px;
+      bottom: 0;
+    }
+  }
+  .hdr {
+    &--btmnav {
+      &--links {
+        overflow-x: scroll;
+        white-space: nowrap;
+        &::-webkit-scrollbar {
+          display: none;
+        }
+      }
+    }
+  }
+}
