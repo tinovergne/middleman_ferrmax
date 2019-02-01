@@ -13,6 +13,7 @@ page '/*.xml', layout: false
 page '/*.json', layout: false
 page '/*.txt', layout: false
 
+set :haml, { :format => :html5 }
 activate :livereload
 
 # With alternative layout
